@@ -1,11 +1,11 @@
 <template>
-  <section id="signin">
-    <h1>Signin</h1>
+  <section id="signup">
+    <h1>Signup</h1>
 
     <form>
       <input type="text" placeholder="Username" v-model="username" />
       <input type="password" placeholder="Password" v-model="password" />
-      <button>Signin</button>
+      <button>Register</button>
     </form>
   </section>
 </template>
@@ -13,7 +13,7 @@
 <script lang="ts">
 import Vue, { ComponentOptions } from "vue";
 
-const Signin: ComponentOptions<Vue> = {
+const Signup: ComponentOptions<Vue> = {
   data() {
     return {
       username: "",
@@ -22,5 +22,5 @@ const Signin: ComponentOptions<Vue> = {
   }
 };
 
-export default Signin;
+export default Signup;
 </script>

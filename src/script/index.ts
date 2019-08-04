@@ -17,6 +17,7 @@ firebase.initializeApp(firebaseConfig);
 // page
 import Top from './page/top.vue';
 import Signin from './page/signin.vue';
+import Signup from './page/signup.vue';
 
 // router
 import VueRouter from 'vue-router';
@@ -29,6 +30,9 @@ const router = new VueRouter({
   }, {
     path: '/signin',
     component: Signin,
+  }, {
+    path: '/signup',
+    component: Signup,
   }],
 });
 
