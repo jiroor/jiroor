@@ -8,11 +8,15 @@
     "build": "parcel build src/index.html"
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
     "parcel": "1.12.3",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "firebase": "6.3.4",
     "vue": "2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
     "vue-router": "3.0.7"
   },
   "alias": {
