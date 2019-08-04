@@ -5,20 +5,41 @@
     <form>
       <input type="text" placeholder="Username" v-model="username" />
       <input type="password" placeholder="Password" v-model="password" />
-      <button>Register</button>
+      <button @click="signup">Register</button>
+      <p v-show="error">{{ error }}</p>
     </form>
   </section>
 </template>
 
 <script lang="ts">
 import Vue, { ComponentOptions } from "vue";
+import * as firebase from "firebase";
 
-const Signup: ComponentOptions<Vue> = {
+interface ISignup extends Vue {
+  username: string;
+  password: string;
+  error: string;
+}
+
+const Signup: ComponentOptions<ISignup> = {
   data() {
     return {
       username: "",
-      password: ""
+      password: "",
+      error: ""
     };
+  },
+
+  methods: {
+    signup() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.username, this.password)
+        .then((user: firebase.auth.UserCredential) => {
+          this.$router.push("signin");
+        })
+        .catch((error: Error) => (this.error = error.message));
+    }
   }
 };
 

@@ -25,12 +25,15 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [{
+    name: 'top',
     path: '/',
     component: Top,
   }, {
+    name: 'signin',
     path: '/signin',
     component: Signin,
   }, {
+    name: 'signup',
     path: '/signup',
     component: Signup,
   }],
