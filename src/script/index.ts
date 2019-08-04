@@ -1,5 +1,5 @@
+// vue
 import Vue, { ComponentOptions } from 'vue';
-import VueRouter from 'vue-router';
 
 // firebase
 import * as firebase from 'firebase/app';
@@ -14,17 +14,12 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-// page/top
-const Top: ComponentOptions<Vue> = {
-  template: '<div>top</div>',
-};
-
-// page/view
-const View: ComponentOptions<Vue> = {
-  template: '<div>view</div>',
-};
+// page
+import Top from './page/top.vue';
+import Signin from './page/signin.vue';
 
 // router
+import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -32,8 +27,8 @@ const router = new VueRouter({
     path: '/',
     component: Top,
   }, {
-    path: '/view',
-    component: View,
+    path: '/signin',
+    component: Signin,
   }],
 });
 
