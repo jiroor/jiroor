@@ -1,43 +1,11 @@
 // vue
-import Vue, { ComponentOptions } from 'vue';
+import Vue from 'vue';
 
 // firebase
-import * as firebase from 'firebase/app';
-const firebaseConfig = {
-  apiKey: 'AIzaSyCo29810ZYi_lPvsVC5bwb2Q6zno-wajoY',
-  authDomain: 'jiroor-a0000.firebaseapp.com',
-  databaseURL: 'https://jiroor-a0000.firebaseio.com',
-  projectId: 'jiroor-a0000',
-  storageBucket: '',
-  messagingSenderId: '575059976341',
-  appId: '1:575059976341:web:7845135fa1a90d97'
-};
-firebase.initializeApp(firebaseConfig);
-
-// page
-import Top from './page/top.vue';
-import Signin from './page/signin.vue';
-import Signup from './page/signup.vue';
+import './firebase';
 
 // router
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-  routes: [{
-    name: 'top',
-    path: '/',
-    component: Top,
-  }, {
-    name: 'signin',
-    path: '/signin',
-    component: Signin,
-  }, {
-    name: 'signup',
-    path: '/signup',
-    component: Signup,
-  }],
-});
+import router from './router';
 
 // app
 const App = new Vue({
